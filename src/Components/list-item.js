@@ -29,9 +29,11 @@ export const ListItem = (props) => {
                     <i className="fa fa-trash"/>
                     
                 </div>
-                <div className={"list-item-edit " + (edit ? "editing" : "")} onClick={()=>setEdit(!edit)}>
+                {!props.checked &&
+                    <div className={"list-item-edit " + (edit ? "editing" : "")} onClick={()=>setEdit(!edit)}>
                     <i className="fa fa-edit"/>
-                </div>
+                    </div>
+                }
                 <div className="list-item-content">
                     {edit &&
                     <textarea 
@@ -43,13 +45,17 @@ export const ListItem = (props) => {
                     }
                 </div>
                 {edit &&
-                <div>
-                <button onClick={()=>{
+                <div className="list-edit-buttons">
+                <button 
+                    className="list-edit-save"
+                    onClick={()=>{
                     setText(newText); 
                     setEdit(!edit);
                     props.onEditText(newText)}}>save</button>
                     
-                <button onClick={()=>{setEdit(!edit)}}>cancel</button>
+                <button 
+                    className="list-edit-cancel"
+                    onClick={()=>{setEdit(!edit)}}>cancel</button>
                 </div>}
 
                 <hr/>
