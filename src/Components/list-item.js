@@ -24,6 +24,11 @@ export const ListItem = (props) => {
                     <span>X</span>
                     
                 </div>
+                {!edit && props.canEdit &&
+                <button 
+                    className="list-item-delete"
+                    onClick={()=>setEdit(!edit)}>edit</button>
+                }
                 <div className="list-item-content">
                     {edit &&
                     <textarea 
@@ -34,9 +39,6 @@ export const ListItem = (props) => {
                     <p className={(props.checked ? "line-through" : "")}>{text}</p>
                     }
                 </div>
-                {!edit && props.canEdit &&
-                <button onClick={()=>setEdit(!edit)}>edit</button>
-                }
                 {edit &&
                 <div>
                 <button onClick={()=>{
