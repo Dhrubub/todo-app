@@ -1,0 +1,97 @@
+.list-container {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
+}
+.list-input {
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 10px;
+    resize: none;
+}
+
+.list-submit {
+    background-image: linear-gradient(135deg, green , white 100%);
+    border: 1px solid black;;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+.list-item-container {
+    margin-top: 50px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.list-item {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.list-item-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+    float: left;
+}
+
+.list-item-content {
+    text-align: left;
+    margin-left: 40px;
+    width: 70%;
+    margin-right: 0px;
+    right: 0px;
+}
+
+.list-item-delete {
+    background: rgb(255, 50, 0);
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    float: right;
+}
+
+.list-item-delete:hover,
+.list-item-check:hover,
+.list-submit:hover {
+    cursor: pointer;
+    filter: brightness(0.7);
+    transition: ease all 300ms;
+}
+
+.list-item-delete span {
+    color: #fff;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+.checked {
+    background-color: green;
+}
+
+.line-through {
+    transition: all ease 300ms;
+    text-decoration: line-through;
+    opacity: 0.6;
+
+}
+
+.completed-item-container {
+    margin-top: 50px;
+    border: 1px solid black;
+    padding: 10px;
+}
