@@ -7,23 +7,23 @@ export const ListItem = (props) => {
 
     const [edit, setEdit] = useState(false);
 
-    const [newText, setNewText] = useState("");
+    const [text, setText] = useState(props.text);
 
-    const [text, setText] = useState(props.text)
+    const [newText, setNewText] = useState(props.text);
+
+    useEffect(() => {
+        setNewText(props.text)
+        setText(props.text)
+    }, [props.text])
 
 
-    const [completed, setCompleted] = useState([])
 
-    // const handleClick = () => {
-    //     setCheck(!check)
-    // } 
 
     return (
             <div className="list-item">
                 <div 
                 className={"list-item-check " + (props.checked ? "checked" : "")}
                 onClick={()=>{
-                    //handleClick(); 
                     props.onCheck()}}>
 
                 </div>
@@ -35,11 +35,10 @@ export const ListItem = (props) => {
                     {edit &&
                     <textarea 
                         className="list-item-content-edit" 
-                        value={text} 
-                        onChange={(e)=>setNewText(e.target.value)}></textarea>
+                        onChange={(e)=>setNewText(e.target.value)}>{text}</textarea>
                     }
                     {!edit &&
-                    <p className={(props.checked ? "line-through" : "")}>{props.text}</p>
+                    <p className={(props.checked ? "line-through" : "")}>{text}</p>
                     }
                 </div>
                 {!edit && props.canEdit &&
@@ -51,6 +50,7 @@ export const ListItem = (props) => {
                     setText(newText); 
                     setEdit(!edit);
                     props.onEditText(newText)}}>save</button>
+                    
                 <button onClick={()=>{setEdit(!edit)}}>cancel</button>
                 </div>}
 

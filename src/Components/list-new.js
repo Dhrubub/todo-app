@@ -79,7 +79,7 @@ export const ListNew = () => {
                         <ListItem 
                         key={index}
                         text={text}
-                        onEditText={(newText)=>handleEdit2(newText, index)}
+                        onEditText={(newText)=>handleEdit(newText, index)}
                         onErase={()=>handleEraseChecked(text, index)}
                         onCheck={()=>handleCheck(text, index)}
                         canEdit 
