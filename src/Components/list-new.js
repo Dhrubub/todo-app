@@ -36,10 +36,19 @@ export const ListNew = () => {
 
     const handleEdit = (newText, index) => {
         let tempArray = [...listItems]
+        tempArray.reduce((text, id) => {
+            if (id == index) {
+                text = newText;
+            }
+        })
         tempArray[index] = newText
         setListItems(tempArray)
 
     } 
+
+    const handleEdit2 = (newText, index) => {
+    } 
+
 
     
 
@@ -70,7 +79,7 @@ export const ListNew = () => {
                         <ListItem 
                         key={index}
                         text={text}
-                        onEditText={(newText)=>handleEdit(newText, index)}
+                        onEditText={(newText)=>handleEdit2(newText, index)}
                         onErase={()=>handleEraseChecked(text, index)}
                         onCheck={()=>handleCheck(text, index)}
                         canEdit />
@@ -85,6 +94,7 @@ export const ListNew = () => {
                     {completed.map((text, index) => (
                         <ListItem 
                         key={index}
+                        index={index}
                         text={text}
                         onErase={()=>handleEraseUnChecked(text, index)}
                         onCheck={()=>handleUnCheck(text, index)} 
