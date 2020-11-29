@@ -34,6 +34,13 @@ export const ListNew = () => {
         setListItems([...listItems, [text]])
     }
 
+    const handleEdit = (newText, index) => {
+        let tempArray = [...listItems]
+        tempArray[index] = newText
+        setListItems(tempArray)
+
+    } 
+
     
 
     return (
@@ -63,8 +70,10 @@ export const ListNew = () => {
                         <ListItem 
                         key={index}
                         text={text}
+                        onEditText={(newText)=>handleEdit(newText, index)}
                         onErase={()=>handleEraseChecked(text, index)}
-                        onCheck={()=>handleCheck(text, index)} />
+                        onCheck={()=>handleCheck(text, index)}
+                        canEdit />
                     )).reverse()}
                 </div>
             }
