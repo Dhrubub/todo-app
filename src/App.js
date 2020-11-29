@@ -4,7 +4,7 @@ import { ListNew } from "./Components/list-new";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <ListNew />
 
     </div>

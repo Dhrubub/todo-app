@@ -63,6 +63,10 @@ export const ListNew = () => {
             <button 
                 className="list-submit" 
                 onClick={() => handleSubmit()}>Submit</button>
+            
+            {listItems.length < 1 && completed.length < 1 &&
+                <h1>NO TASKS</h1>
+            }
 
             {listItems.length > 0 &&
                 <div className="list-item-container">

@@ -17,8 +17,8 @@ export const ListItem = (props) => {
     return (
             <div className="list-item">
                 <div 
-                className={"list-item-check " + (props.checked ? "checked" : "")}
-                onClick={()=>{
+                    className={"list-item-check " + (props.checked ? "checked" : "")}
+                    onClick={()=>{
                     props.onCheck()}}>
                         {props.checked &&
                             <i className={"fa fa-check "}/>

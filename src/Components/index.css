@@ -5,20 +5,19 @@
 }
 .list-input {
     border: 1px solid black;
-    width: 80%;
+    width: 96%;
     border-radius: 5px;
-    margin-right: 5%;
-    margin-left: 5%;
-    padding: 10px;
+    padding: 2%;
     resize: none;
 }
 
 .list-submit {
-    background-color: #28a745;
+    background-color: #28a745; 
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     color: white;
     border: 1px solid black;
+    margin-top: 5px;
     margin-right: 5px;
     cursor: pointer
 
@@ -29,6 +28,11 @@
     margin-top: 50px;
     border: 1px solid black;
     padding: 10px;
+}
+
+.list-item-container h1,
+.completed-item-container h1 {
+    margin-left: 40px;
 }
 
 .list-item {
@@ -43,6 +47,7 @@
     border-radius: 50%;
     border: 1px solid black;
     float: left;
+    text-align: center;
 }
 
 .list-item-content {
@@ -115,7 +120,8 @@
 .list-item-content-edit {
     resize: none;
     width: 100%;
-    box-shadow: 0 0 2px 1px skyblue;
+    box-shadow: 0 0 3px 2px skyblue;
+    margin-bottom: 5px;
 }
 
 .list-edit-buttons {
