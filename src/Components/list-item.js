@@ -39,7 +39,7 @@ export const ListItem = (props) => {
                         onChange={(e)=>setNewText(e.target.value)}></textarea>
                     }
                     {!edit &&
-                    <p className={(props.checked ? "line-through" : "")}>{text}</p>
+                    <p className={(props.checked ? "line-through" : "")}>{props.text}</p>
                     }
                 </div>
                 {!edit && props.canEdit &&

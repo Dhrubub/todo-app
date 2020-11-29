@@ -82,7 +82,8 @@ export const ListNew = () => {
                         onEditText={(newText)=>handleEdit2(newText, index)}
                         onErase={()=>handleEraseChecked(text, index)}
                         onCheck={()=>handleCheck(text, index)}
-                        canEdit />
+                        canEdit 
+                        />
                     )).reverse()}
                 </div>
             }
@@ -94,7 +95,6 @@ export const ListNew = () => {
                     {completed.map((text, index) => (
                         <ListItem 
                         key={index}
-                        index={index}
                         text={text}
                         onErase={()=>handleEraseUnChecked(text, index)}
                         onCheck={()=>handleUnCheck(text, index)} 
