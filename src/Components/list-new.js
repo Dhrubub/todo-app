@@ -4,7 +4,6 @@ import {ListItem} from "./list-item"
 export const ListNew = () => {
     const [listItems, setListItems] = useState([])
     const [completed, setCompleted] = useState([])
-
     const [text, setText] = useState("")
 
 
@@ -16,11 +15,11 @@ export const ListNew = () => {
         }
     }
 
-    const handleEraseChecked = (text, index) => {
+    const handleEraseUnChecked = (text, index) => {
         setListItems(listItems.filter((items, id) => id !== index ))
     }
 
-    const handleEraseUnChecked = (text, index) => {
+    const handleEraseChecked = (text, index) => {
         setCompleted(completed.filter((items, id) => id !== index ))
     }
 
@@ -45,13 +44,7 @@ export const ListNew = () => {
         setListItems(tempArray)
 
     } 
-
-    const handleEdit2 = (newText, index) => {
-    } 
-
-
     
-
     return (
         <div className="list-container">
             <textarea 
@@ -80,7 +73,7 @@ export const ListNew = () => {
                         key={index}
                         text={text}
                         onEditText={(newText)=>handleEdit(newText, index)}
-                        onErase={()=>handleEraseChecked(text, index)}
+                        onErase={()=>handleEraseUnChecked(text, index)}
                         onCheck={()=>handleCheck(text, index)}
                         canEdit 
                         />
@@ -96,7 +89,7 @@ export const ListNew = () => {
                         <ListItem 
                         key={index}
                         text={text}
-                        onErase={()=>handleEraseUnChecked(text, index)}
+                        onErase={()=>handleEraseChecked(text, index)}
                         onCheck={()=>handleUnCheck(text, index)} 
                         checked/>
                     )).reverse()}

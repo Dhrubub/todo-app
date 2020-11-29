@@ -3,21 +3,14 @@ import React, {useState, useEffect} from 'react';
 import "./index.css"
 
 export const ListItem = (props) => {
-    const [check, setCheck] = useState(false)
-
     const [edit, setEdit] = useState(false);
-
     const [text, setText] = useState(props.text);
-
     const [newText, setNewText] = useState(props.text);
 
     useEffect(() => {
         setNewText(props.text)
         setText(props.text)
     }, [props.text])
-
-
-
 
     return (
             <div className="list-item">
