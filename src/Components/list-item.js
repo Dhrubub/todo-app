@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
+import 'font-awesome/css/font-awesome.min.css'
+
 import "./index.css"
 
 export const ListItem = (props) => {
@@ -18,17 +20,18 @@ export const ListItem = (props) => {
                 className={"list-item-check " + (props.checked ? "checked" : "")}
                 onClick={()=>{
                     props.onCheck()}}>
+                        {props.checked &&
+                            <i className={"fa fa-check "}/>
+                        }
 
                 </div>
-                <div className="list-item-delete" onClick={props.onErase}>
-                    <span>X</span>
+                <div className={"list-item-delete"} onClick={props.onErase}>
+                    <i className="fa fa-trash"/>
                     
                 </div>
-                {!edit && props.canEdit &&
-                <button 
-                    className="list-item-delete"
-                    onClick={()=>setEdit(!edit)}>edit</button>
-                }
+                <div className={"list-item-edit " + (edit ? "editing" : "")} onClick={()=>setEdit(!edit)}>
+                    <i className="fa fa-edit"/>
+                </div>
                 <div className="list-item-content">
                     {edit &&
                     <textarea 

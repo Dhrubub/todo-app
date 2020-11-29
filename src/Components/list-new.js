@@ -75,7 +75,6 @@ export const ListNew = () => {
                         onEditText={(newText)=>handleEdit(newText, index)}
                         onErase={()=>handleEraseUnChecked(text, index)}
                         onCheck={()=>handleCheck(text, index)}
-                        canEdit 
                         />
                     )).reverse()}
                 </div>

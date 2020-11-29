@@ -55,12 +55,14 @@
 }
 
 .list-item-delete {
-    background: rgb(255, 50, 0);
-    text-align: center;
-    width: 24px;
-    height: 24px;
+    margin-right: 5px;
     border-radius: 4px;
     float: right;
+}
+
+.fa-trash {
+    transform: scale(1.5);
+    color: red;
 }
 
 .list-item-delete:hover,
@@ -71,16 +73,28 @@
     transition: ease all 300ms;
 }
 
-.list-item-delete span {
-    color: #fff;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 1em;
-    font-weight: bold;
 
+.list-item-edit {
+    margin-right: 15px;
+    float: right;
+}
+
+.fa-edit {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.fa-check {
+    color: white;
 }
 
 .checked {
-    background-color: green;
+    background-color: #51A0D5;
+}
+
+.editing {
+    color: green;
+
 }
 
 .line-through {
