@@ -7,6 +7,10 @@ export const ListItem = (props) => {
 
     const [edit, setEdit] = useState(false);
 
+    const [newText, setNewText] = useState("");
+
+    const [text, setText] = useState(props.text)
+
 
     const [completed, setCompleted] = useState([])
 
@@ -29,13 +33,21 @@ export const ListItem = (props) => {
                 </div>
                 <div className="list-item-content">
                     {edit &&
-                    <textarea>{props.edit}</textarea>
+                    <textarea className="list-item-content-edit" onChange={(e)=>setNewText(e.target.value)}>{text}</textarea>
                     }
                     {!edit &&
-                    <p className={(props.checked ? "line-through" : "")}>{props.text}</p>
+                    <p className={(props.checked ? "line-through" : "")}>{text}</p>
                     }
                 </div>
+                {!edit &&
                 <button onClick={()=>setEdit(!edit)}>edit</button>
+                }
+                {edit &&
+                <div>
+                <button onClick={()=>{setText(newText); setEdit(!edit)}}>save</button>
+                <button onClick={()=>{setEdit(!edit)}}>cancel</button>
+                </div>}
+
                 <hr/>
                 
             
