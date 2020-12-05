@@ -5,7 +5,9 @@ import { ListNew } from "./Components/list-new";
 function App() {
   return (
     <div>
-      <ListNew />
+      <div className="background">
+        <ListNew />
+      </div>
 
     </div>
   );

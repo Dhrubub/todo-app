@@ -1,5 +1,15 @@
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  overflow: auto !important;
+
+  background-image: linear-gradient(135deg, skyblue, turquoise);
+}
 .App {
-  text-align: left;
 }
 
 .App-logo {

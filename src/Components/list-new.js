@@ -52,14 +52,13 @@ export const ListNew = () => {
             <form 
                 onSubmit={(e)=>{
                     e.preventDefault();
-                    handleSubmit();
-                    console.log("test")}}>
+                    handleSubmit();}}>
 
-                <input className="list-input" type="textarea" onChange={(e)=>setText(e.target.value)}/>
-                <input type="submit" value="submit"/>
+                <input className="list-input" type="textarea" value={text} onChange={(e)=>setText(e.target.value)}/>
+                <input  className="list-submit" type="submit" value="Submit"/>
 
             </form>
-            <textarea 
+            {/* <textarea 
                 className="list-input" 
                 rows={5} 
                 value={text} 
@@ -74,7 +73,7 @@ export const ListNew = () => {
             </textarea>
             <button 
                 className="list-submit" 
-                onClick={() => handleSubmit()}>Submit</button>
+                onClick={() => handleSubmit()}>Submit</button> */}
             
             {listItems.length < 1 && completed.length < 1 &&
                 <h1>NO TASKS</h1>
@@ -97,7 +96,7 @@ export const ListNew = () => {
             }
 
             {completed.length > 0 &&
-                <div className="completed-item-container">
+                <div className="list-item-container completed-item-container">
                     <h1>COMPLETED</h1>
                     <hr />
                     {completed.map((text, index) => (

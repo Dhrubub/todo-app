@@ -36,9 +36,13 @@ export const ListItem = (props) => {
                 }
                 <div className="list-item-content">
                     {edit &&
-                    <textarea 
+                    // <form onSubmit={(e)=>e.preventDefault()}>
+                    //     <input type="textfield" onChange={(e)=>setNewText(e.target.value)}/>
+                    // </form>
+                        <textarea 
                         className="list-item-content-edit" 
                         onChange={(e)=>setNewText(e.target.value)}>{text}</textarea>
+                    
                     }
                     {!edit &&
                     <p className={(props.checked ? "line-through" : "")}>{text}</p>
@@ -58,7 +62,6 @@ export const ListItem = (props) => {
                     onClick={()=>{setEdit(!edit)}}>cancel</button>
                 </div>}
 
-                <hr/>
                 
             
             </div>
