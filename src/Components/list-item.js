@@ -38,17 +38,17 @@ export const ListItem = (props) => {
                     
                 </div>
                 {!props.checked &&
-                    <div className={"list-item-edit " + (edit ? "editing" : "")} onClick={()=>setEdit(!edit)}>
+                    <div className={"list-item-edit " + (edit ? "editing" : "")} onClick={()=>{setEdit(!edit)}}>{/**;document.getElementById("editText").focus() */}
                     <i className="fa fa-edit"/>
                     </div>
                 }
                 <div className="list-item-content">
                     {edit &&
                     <form onSubmit={(e)=>{handleSubmit(e)}} onReset={()=>{setEdit(!edit); setNewText(text)}}>
-                        <input type="textfield" value={newText} onChange={(e)=>setNewText(e.target.value)}/>
+                        <input className="list-item-content-edit" id="editText" type="textfield" value={newText} onChange={(e)=>setNewText(e.target.value)}/>
                         <br/>
-                        <input type="submit" value="Submit"/>
-                        <input type="reset" value="Cancel"/>
+                        <input className="list-edit-save" type="submit" value="Save"/>
+                        <input className="list-edit-cancel" type="reset" value="Cancel"/>
                      </form>
                         // <textarea 
                         // className="list-item-content-edit" 
@@ -59,7 +59,7 @@ export const ListItem = (props) => {
                     <p className={(props.checked ? "line-through" : "")}>{text}</p>
                     }
                 </div>
-                {edit &&
+                {/* {edit &&
                 <div className="list-edit-buttons">
                 <button 
                     className="list-edit-save"
@@ -71,7 +71,7 @@ export const ListItem = (props) => {
                 <button 
                     className="list-edit-cancel"
                     onClick={()=>{setEdit(!edit)}}>cancel</button>
-                </div>}
+                </div>} */}
 
                 
             

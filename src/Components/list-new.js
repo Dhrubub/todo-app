@@ -58,22 +58,6 @@ export const ListNew = () => {
                 <input  className="list-submit" type="submit" value="Submit"/>
 
             </form>
-            {/* <textarea 
-                className="list-input" 
-                rows={5} 
-                value={text} 
-                onChange={(e)=>setText(e.target.value)}
-                onKeyDown={(e)=> {
-                    if (e.code === "Enter") {
-                        e.preventDefault();
-                        console.log("enter was pressed")
-                        handleSubmit()
-                    }}}>
-                
-            </textarea>
-            <button 
-                className="list-submit" 
-                onClick={() => handleSubmit()}>Submit</button> */}
             
             {listItems.length < 1 && completed.length < 1 &&
                 <h1>NO TASKS</h1>
