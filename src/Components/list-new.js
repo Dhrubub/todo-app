@@ -44,9 +44,21 @@ export const ListNew = () => {
         setListItems(tempArray)
 
     } 
+
+
     
     return (
         <div className="list-container">
+            <form 
+                onSubmit={(e)=>{
+                    e.preventDefault();
+                    handleSubmit();
+                    console.log("test")}}>
+
+                <input className="list-input" type="textarea" onChange={(e)=>setText(e.target.value)}/>
+                <input type="submit" value="submit"/>
+
+            </form>
             <textarea 
                 className="list-input" 
                 rows={5} 
