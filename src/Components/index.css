@@ -5,6 +5,7 @@
     background-color: white;
     padding: 20px;
     border-radius: 10px;
+    border: 1px solid black;
 }
 .list-input {
     border: 1px solid black;
@@ -34,6 +35,7 @@
     /* background-image: linear-gradient(90deg, purple, orange); */
     border-radius: 6px;
     background-image: linear-gradient(135deg, skyblue, turquoise);
+    border: 1px solid black;
 }
 
 .list-item-container h1,

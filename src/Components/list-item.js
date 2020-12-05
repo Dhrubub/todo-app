@@ -14,6 +14,14 @@ export const ListItem = (props) => {
         setText(props.text)
     }, [props.text])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setText(newText); 
+        setEdit(!edit);
+        props.onEditText(newText);
+
+    } 
+
     return (
             <div className="list-item">
                 <div 
@@ -36,12 +44,15 @@ export const ListItem = (props) => {
                 }
                 <div className="list-item-content">
                     {edit &&
-                    // <form onSubmit={(e)=>e.preventDefault()}>
-                    //     <input type="textfield" onChange={(e)=>setNewText(e.target.value)}/>
-                    // </form>
-                        <textarea 
-                        className="list-item-content-edit" 
-                        onChange={(e)=>setNewText(e.target.value)}>{text}</textarea>
+                    <form onSubmit={(e)=>{handleSubmit(e)}} onReset={()=>{setEdit(!edit); setNewText(text)}}>
+                        <input type="textfield" value={newText} onChange={(e)=>setNewText(e.target.value)}/>
+                        <br/>
+                        <input type="submit" value="Submit"/>
+                        <input type="reset" value="Cancel"/>
+                     </form>
+                        // <textarea 
+                        // className="list-item-content-edit" 
+                        // onChange={(e)=>setNewText(e.target.value)}>{text}</textarea>
                     
                     }
                     {!edit &&
