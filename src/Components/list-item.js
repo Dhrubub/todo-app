@@ -38,43 +38,35 @@ export const ListItem = (props) => {
                     
                 </div>
                 {!props.checked &&
-                    <div className={"list-item-edit " + (edit ? "editing" : "")} onClick={()=>{setEdit(!edit)}}>{/**;document.getElementById("editText").focus() */}
+                    <div 
+                        className={"list-item-edit " + (edit ? "editing" : "")} 
+                        onClick={()=>{
+                            setEdit(!edit);
+                            setNewText(text);}}>
+
                     <i className="fa fa-edit"/>
                     </div>
                 }
                 <div className="list-item-content">
                     {edit &&
                     <form onSubmit={(e)=>{handleSubmit(e)}} onReset={()=>{setEdit(!edit); setNewText(text)}}>
-                        <input className="list-item-content-edit" id="editText" type="textfield" value={newText} onChange={(e)=>setNewText(e.target.value)}/>
+                        <input 
+                            className="list-item-content-edit" 
+                            autoFocus
+                            type="textfield" 
+                            value={newText} 
+                            onChange={(e)=>setNewText(e.target.value)}/>
                         <br/>
                         <input className="list-edit-save" type="submit" value="Save"/>
                         <input className="list-edit-cancel" type="reset" value="Cancel"/>
                      </form>
-                        // <textarea 
-                        // className="list-item-content-edit" 
-                        // onChange={(e)=>setNewText(e.target.value)}>{text}</textarea>
-                    
                     }
+
                     {!edit &&
                     <p className={(props.checked ? "line-through" : "")}>{text}</p>
                     }
                 </div>
-                {/* {edit &&
-                <div className="list-edit-buttons">
-                <button 
-                    className="list-edit-save"
-                    onClick={()=>{
-                    setText(newText); 
-                    setEdit(!edit);
-                    props.onEditText(newText)}}>save</button>
-                    
-                <button 
-                    className="list-edit-cancel"
-                    onClick={()=>{setEdit(!edit)}}>cancel</button>
-                </div>} */}
-
-                
-            
+                ``
             </div>
             
 
